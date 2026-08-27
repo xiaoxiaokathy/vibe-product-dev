@@ -17,6 +17,18 @@ Owner: <name/role>
 - Performance/security/accessibility checks:
 - Environment and configuration:
 
+## Verification coverage
+
+| Check or scenario | Linked criterion | Result | Evidence | Not run / reason |
+| --- | --- | --- | --- | --- |
+|  | AC-01 | Pass / Fail / Not run | EVD-01 — <link, command, screenshot> |  |
+
+## Dependencies and external-service gate
+
+- Dependency changes: None | <package/service and purpose>
+- Cost/API key gate: Not applicable | Approved — <service, exact action, known/unknown cost, data leaving workspace, credential>
+- Unverified external behavior and risk:
+
 ## Release readiness
 
 - Monitoring / owner:
@@ -28,4 +40,3 @@ Owner: <name/role>
 
 - Accepted / Implemented with open acceptance items / Rejected:
 - Approver and date:
-

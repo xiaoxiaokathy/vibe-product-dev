@@ -9,6 +9,19 @@ Turn an idea into an evidence-backed, reviewable, and verifiably accepted produc
 
 `Objective -> Requirement -> Acceptance criterion -> Task -> Evidence`
 
+## Mandatory development guardrails
+
+Apply these rules on every route. `quick` reduces documentation ceremony, never safety, authorization, or verification.
+
+1. Identify the actual problem, user outcome, and shortest reliable path before choosing research, planning, or implementation.
+2. Before modifying anything, inspect the relevant workspace files, project instructions, existing structure, and repository-native validation commands. Do not guess paths, conventions, or commands.
+3. Reuse the existing design and make the smallest local change that meets the acceptance criteria. Rewrite or introduce a new abstraction only when the existing structure cannot safely support the outcome; record why.
+4. Write only inside the current workspace. Do not install or configure dependencies unrelated to the approved task.
+5. Before an action that may incur cost, create a paid resource, enable a metered API, change a billable quota/plan, or require a new API key, disclose the service, action, known or unknown cost, data that would leave the workspace, and required credential. Stop until the user explicitly approves that exact action.
+6. After implementation, run the discovered existing checks that are proportionate to the change. In the final report, separate what was verified from what was not verified and explain why.
+
+Read `references/execution-guardrails.md` before implementation, dependency changes, external-service work, or final handoff.
+
 ## Operating contract
 
 1. Start by identifying the current lifecycle phase. Do not recreate artifacts that are already present; inspect and improve them.
@@ -154,7 +167,7 @@ Next gate: <what must be true to proceed>
 ## Included resources
 
 - `references/quality-gates.md` — complete definitions of quality gates and evidence quality.
+- `references/execution-guardrails.md` — required pre-modification inspection, minimal-change, dependency, cost/API-key, and verification decisions.
 - `references/research-standard.md` — research discipline and source hierarchy.
 - `templates/` — change artifacts to copy and fill.
 - `scripts/check_traceability.py` — checks that requirements, criteria, tasks, and evidence are connected.
-

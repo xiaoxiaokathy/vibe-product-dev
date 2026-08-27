@@ -22,6 +22,19 @@ That chain makes it possible to verify that shipped behavior solves the intended
 
 The Skill selects one of three routes: `quick` for bounded work, `feature` for ordinary user-visible changes, and `product` for new/high-risk initiatives. This preserves the speed of vibe coding while adding rigor only where a decision warrants it.
 
+## Development execution rules
+
+All routes, including `quick`, require the same execution safeguards:
+
+- Understand the real problem and take the shortest reliable path before editing.
+- Inspect the relevant workspace, instructions, existing files, and native checks before changing anything.
+- Reuse existing code and make the smallest safe local change; justify any rewrite or new abstraction.
+- Write only in the active workspace and never install unrelated dependencies.
+- Run proportionate existing checks and report both verified and unverified behavior.
+- Before any potentially billable action, metered API enablement, paid-resource creation, quota/plan change, or new API key, disclose the service, exact action, cost, outbound data, and credential need; wait for explicit approval.
+
+See [execution guardrails](references/execution-guardrails.md) for the decision table and confirmation format. These rules add no runtime dependency and do not automatically install packages, request credentials, create paid resources, or call external services.
+
 ## Installation
 
 Copy the complete `vibe-product-dev/` directory into the skills directory for your agent, preserving its structure. For Codex, it can be placed under your configured Codex skills folder; for Claude Code, place or link it under `.claude/skills/` or the user skills directory. The entry point is `SKILL.md`.
@@ -100,7 +113,7 @@ The checker finds missing links and is deliberately conservative. It does not ce
 
 ## Inspiration and differentiation
 
-The design learns from [GitHub Spec Kit](https://github.github.com/spec-kit/), [OpenSpec](https://github.com/Fission-AI/OpenSpec/), [Codex Workflow Skills](https://github.com/timothyreavis/codex-workflow-skills), [AI SDLC Framework](https://github.com/pangon/ai-sdlc-framework), and [kevinlin/skills](https://github.com/kevinlin/skills). It differs by making problem discovery, research provenance, risk-calibrated workflow choice, and acceptance evidence first-class rather than stopping at an implementation plan.
+The design learns from [GitHub Spec Kit](https://github.com/alfasin/agentic-sdlc-spec-kit) (project principles and phase verification), [OpenSpec](https://github.com/Fission-AI/OpenSpec/) (explicit, brownfield-safe changes), [SteveVitali/agent-skills](https://github.com/SteveVitali/agent-skills) (repository-native checks and evidence-first completion), [SuperSpec](https://github.com/lbk-open/super-spec) (complexity triage and human gates), and [carlitose/agent-skills](https://github.com/carlitose/agent-skills) (explicit authority for publishing and provider actions). It differs by making product discovery, research provenance, risk-calibrated workflow choice, execution guardrails, and acceptance evidence first-class without requiring multi-agent orchestration or PR automation.
 
 ## License
 
